@@ -63,18 +63,18 @@ if ($.isNode()) {
 
   function i(n, r) {
     n[r >> 5] |= 128 << r % 32,
-      n[14 + (r + 64 >>> 9 << 4)] = r;
+        n[14 + (r + 64 >>> 9 << 4)] = r;
     var e, i, a, d, h, l = 1732584193, g = -271733879, v = -1732584194, m = 271733878;
     for (e = 0; e < n.length; e += 16)
       i = l,
-        a = g,
-        d = v,
-        h = m,
-        g = f(g = f(g = f(g = f(g = c(g = c(g = c(g = c(g = u(g = u(g = u(g = u(g = o(g = o(g = o(g = o(g, v = o(v, m = o(m, l = o(l, g, v, m, n[e], 7, -680876936), g, v, n[e + 1], 12, -389564586), l, g, n[e + 2], 17, 606105819), m, l, n[e + 3], 22, -1044525330), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 4], 7, -176418897), g, v, n[e + 5], 12, 1200080426), l, g, n[e + 6], 17, -1473231341), m, l, n[e + 7], 22, -45705983), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 8], 7, 1770035416), g, v, n[e + 9], 12, -1958414417), l, g, n[e + 10], 17, -42063), m, l, n[e + 11], 22, -1990404162), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 12], 7, 1804603682), g, v, n[e + 13], 12, -40341101), l, g, n[e + 14], 17, -1502002290), m, l, n[e + 15], 22, 1236535329), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 1], 5, -165796510), g, v, n[e + 6], 9, -1069501632), l, g, n[e + 11], 14, 643717713), m, l, n[e], 20, -373897302), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 5], 5, -701558691), g, v, n[e + 10], 9, 38016083), l, g, n[e + 15], 14, -660478335), m, l, n[e + 4], 20, -405537848), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 9], 5, 568446438), g, v, n[e + 14], 9, -1019803690), l, g, n[e + 3], 14, -187363961), m, l, n[e + 8], 20, 1163531501), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 13], 5, -1444681467), g, v, n[e + 2], 9, -51403784), l, g, n[e + 7], 14, 1735328473), m, l, n[e + 12], 20, -1926607734), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 5], 4, -378558), g, v, n[e + 8], 11, -2022574463), l, g, n[e + 11], 16, 1839030562), m, l, n[e + 14], 23, -35309556), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 1], 4, -1530992060), g, v, n[e + 4], 11, 1272893353), l, g, n[e + 7], 16, -155497632), m, l, n[e + 10], 23, -1094730640), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 13], 4, 681279174), g, v, n[e], 11, -358537222), l, g, n[e + 3], 16, -722521979), m, l, n[e + 6], 23, 76029189), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 9], 4, -640364487), g, v, n[e + 12], 11, -421815835), l, g, n[e + 15], 16, 530742520), m, l, n[e + 2], 23, -995338651), v = f(v, m = f(m, l = f(l, g, v, m, n[e], 6, -198630844), g, v, n[e + 7], 10, 1126891415), l, g, n[e + 14], 15, -1416354905), m, l, n[e + 5], 21, -57434055), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 12], 6, 1700485571), g, v, n[e + 3], 10, -1894986606), l, g, n[e + 10], 15, -1051523), m, l, n[e + 1], 21, -2054922799), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 8], 6, 1873313359), g, v, n[e + 15], 10, -30611744), l, g, n[e + 6], 15, -1560198380), m, l, n[e + 13], 21, 1309151649), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 4], 6, -145523070), g, v, n[e + 11], 10, -1120210379), l, g, n[e + 2], 15, 718787259), m, l, n[e + 9], 21, -343485551),
-        l = t(l, i),
-        g = t(g, a),
-        v = t(v, d),
-        m = t(m, h);
+          a = g,
+          d = v,
+          h = m,
+          g = f(g = f(g = f(g = f(g = c(g = c(g = c(g = c(g = u(g = u(g = u(g = u(g = o(g = o(g = o(g = o(g, v = o(v, m = o(m, l = o(l, g, v, m, n[e], 7, -680876936), g, v, n[e + 1], 12, -389564586), l, g, n[e + 2], 17, 606105819), m, l, n[e + 3], 22, -1044525330), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 4], 7, -176418897), g, v, n[e + 5], 12, 1200080426), l, g, n[e + 6], 17, -1473231341), m, l, n[e + 7], 22, -45705983), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 8], 7, 1770035416), g, v, n[e + 9], 12, -1958414417), l, g, n[e + 10], 17, -42063), m, l, n[e + 11], 22, -1990404162), v = o(v, m = o(m, l = o(l, g, v, m, n[e + 12], 7, 1804603682), g, v, n[e + 13], 12, -40341101), l, g, n[e + 14], 17, -1502002290), m, l, n[e + 15], 22, 1236535329), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 1], 5, -165796510), g, v, n[e + 6], 9, -1069501632), l, g, n[e + 11], 14, 643717713), m, l, n[e], 20, -373897302), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 5], 5, -701558691), g, v, n[e + 10], 9, 38016083), l, g, n[e + 15], 14, -660478335), m, l, n[e + 4], 20, -405537848), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 9], 5, 568446438), g, v, n[e + 14], 9, -1019803690), l, g, n[e + 3], 14, -187363961), m, l, n[e + 8], 20, 1163531501), v = u(v, m = u(m, l = u(l, g, v, m, n[e + 13], 5, -1444681467), g, v, n[e + 2], 9, -51403784), l, g, n[e + 7], 14, 1735328473), m, l, n[e + 12], 20, -1926607734), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 5], 4, -378558), g, v, n[e + 8], 11, -2022574463), l, g, n[e + 11], 16, 1839030562), m, l, n[e + 14], 23, -35309556), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 1], 4, -1530992060), g, v, n[e + 4], 11, 1272893353), l, g, n[e + 7], 16, -155497632), m, l, n[e + 10], 23, -1094730640), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 13], 4, 681279174), g, v, n[e], 11, -358537222), l, g, n[e + 3], 16, -722521979), m, l, n[e + 6], 23, 76029189), v = c(v, m = c(m, l = c(l, g, v, m, n[e + 9], 4, -640364487), g, v, n[e + 12], 11, -421815835), l, g, n[e + 15], 16, 530742520), m, l, n[e + 2], 23, -995338651), v = f(v, m = f(m, l = f(l, g, v, m, n[e], 6, -198630844), g, v, n[e + 7], 10, 1126891415), l, g, n[e + 14], 15, -1416354905), m, l, n[e + 5], 21, -57434055), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 12], 6, 1700485571), g, v, n[e + 3], 10, -1894986606), l, g, n[e + 10], 15, -1051523), m, l, n[e + 1], 21, -2054922799), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 8], 6, 1873313359), g, v, n[e + 15], 10, -30611744), l, g, n[e + 6], 15, -1560198380), m, l, n[e + 13], 21, 1309151649), v = f(v, m = f(m, l = f(l, g, v, m, n[e + 4], 6, -145523070), g, v, n[e + 11], 10, -1120210379), l, g, n[e + 2], 15, 718787259), m, l, n[e + 9], 21, -343485551),
+          l = t(l, i),
+          g = t(g, a),
+          v = t(v, d),
+          m = t(m, h);
     return [l, g, v, m]
   }
 
@@ -88,7 +88,7 @@ if ($.isNode()) {
   function d(n) {
     var t, r = [];
     for (r[(n.length >> 2) - 1] = void 0,
-           t = 0; t < r.length; t += 1)
+             t = 0; t < r.length; t += 1)
       r[t] = 0;
     var e = 8 * n.length;
     for (t = 0; t < e; t += 8)
@@ -104,18 +104,18 @@ if ($.isNode()) {
     var r, e, o = d(n), u = [], c = [];
     for (u[15] = c[15] = void 0,
          o.length > 16 && (o = i(o, 8 * n.length)),
-           r = 0; r < 16; r += 1)
+             r = 0; r < 16; r += 1)
       u[r] = 909522486 ^ o[r],
-        c[r] = 1549556828 ^ o[r];
+          c[r] = 1549556828 ^ o[r];
     return e = i(u.concat(d(t)), 512 + 8 * t.length),
-      a(i(c.concat(e), 640))
+        a(i(c.concat(e), 640))
   }
 
   function g(n) {
     var t, r, e = "";
     for (r = 0; r < n.length; r += 1)
       t = n.charCodeAt(r),
-        e += "0123456789abcdef".charAt(t >>> 4 & 15) + "0123456789abcdef".charAt(15 & t);
+          e += "0123456789abcdef".charAt(t >>> 4 & 15) + "0123456789abcdef".charAt(15 & t);
     return e
   }
 
@@ -174,7 +174,7 @@ if ($.isNode()) {
         await TotalBean();
         console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
         if (!$.isLogin) {
-         $.log(`\n京东账号${$.index} ${$.nickName || $.UserName}\ncookie已过期,请重新登录获取\n`)
+          $.log(`\n京东账号${$.index} ${$.nickName || $.UserName}\ncookie已过期,请重新登录获取\n`)
           continue
         }
         await jdCrazyJoy()
@@ -183,12 +183,12 @@ if ($.isNode()) {
     $.log(`\n\n`)
   }
 })()
-  .catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-  })
-  .finally(() => {
-    $.done();
-  })
+    .catch((e) => {
+      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+    })
+    .finally(() => {
+      $.done();
+    })
 
 async function jdCrazyJoy() {
   $.coin = 0
@@ -197,8 +197,6 @@ async function jdCrazyJoy() {
   $.canBuy = true
   await getJoyList()
   await $.wait(1000)
-  await getJoyShop()
-  await $.wait(1000)
   if ($.joyIds && $.joyIds.length > 0) {
     $.log('当前JOY分布情况')
     $.log(`\n${$.joyIds[0]} ${$.joyIds[1]} ${$.joyIds[2]} ${$.joyIds[3]}`)
@@ -206,27 +204,37 @@ async function jdCrazyJoy() {
     $.log(`${$.joyIds[8]} ${$.joyIds[9]} ${$.joyIds[10]} ${$.joyIds[11]}\n`)
   }
 
+  await getJoyShop()
+  await $.wait(1000)
+
   // 如果格子全部被占有且没有可以合并的JOY，只能回收低级的JOY (且最低等级的JOY小于30级)
   if(checkHasFullOccupied() && !checkCanMerge() && finMinJoyLevel() < 30) {
     const minJoyId = Math.min(...$.joyIds);
     const boxId = $.joyIds.indexOf(minJoyId);
     console.log(`格子全部被占有且没有可以合并的JOY，回收${boxId + 1}号位等级为${minJoyId}的JOY`)
     await sellJoy(minJoyId, boxId);
+    await $.wait(1000)
     await getJoyList();
+    await $.wait(1000)
   }
+
+  await hourBenefit()
+  await $.wait(1000)
+  await getCoin()
+  await $.wait(1000)
 
   for (let i = 0; i < $.joyIds.length; ++i) {
     if (!$.canBuy) {
-      $.log(`金币不足，跳过购买`)
       break
     }
     if ($.joyIds[i] === 0) {
       await buyJoy($.buyJoyLevel)
       await $.wait(1000)
+      await getJoyList()
+      await $.wait(1000)
     }
   }
-  // await buyJoyLogic()
-  await getJoyList()
+
   let obj = {};
   $.joyIds.map((vo, idx) => {
     if (vo !== 0) {
@@ -243,28 +251,32 @@ async function jdCrazyJoy() {
       $.log(`开始合并两只${idx}级joy\n`)
       await mergeJoy(vo[0], vo[1])
       await $.wait(3000)
+      await getJoyList()
+      await $.wait(1000)
+      if ($.joyIds && $.joyIds.length > 0) {
+        $.log('合并后的JOY分布情况')
+        $.log(`\n${$.joyIds[0]} ${$.joyIds[1]} ${$.joyIds[2]} ${$.joyIds[3]}`)
+        $.log(`${$.joyIds[4]} ${$.joyIds[5]} ${$.joyIds[6]} ${$.joyIds[7]}`)
+        $.log(`${$.joyIds[8]} ${$.joyIds[9]} ${$.joyIds[10]} ${$.joyIds[11]}\n`)
+      }
     }
     if (idx === '34' && vo.length >= 8) {
-      await getCoin();
       if ($.coin >= 6000000000000000) {
         //当存在8个34级JOY，并且剩余金币可为后面继续合成两只新的34级JOY(按全部用30级JOY合成一只34级JOY计算需:1.66T * 2 * 2 * 2 * 2 = 26.56T = 2.6Q)时,则此条件下合并两个34级JOY
         $.log(`开始合并两只${idx}级joy\n`)
         await mergeJoy(vo[0], vo[1])
         await $.wait(3000)
+        await getJoyList()
+        await $.wait(1000)
+        if ($.joyIds && $.joyIds.length > 0) {
+          $.log('合并后的JOY分布情况')
+          $.log(`\n${$.joyIds[0]} ${$.joyIds[1]} ${$.joyIds[2]} ${$.joyIds[3]}`)
+          $.log(`${$.joyIds[4]} ${$.joyIds[5]} ${$.joyIds[6]} ${$.joyIds[7]}`)
+          $.log(`${$.joyIds[8]} ${$.joyIds[9]} ${$.joyIds[10]} ${$.joyIds[11]}\n`)
+        }
       }
     }
   }
-  await getJoyList()
-  if ($.joyIds && $.joyIds.length > 0) {
-    $.log('合并后的JOY分布情况')
-    $.log(`\n${$.joyIds[0]} ${$.joyIds[1]} ${$.joyIds[2]} ${$.joyIds[3]}`)
-    $.log(`${$.joyIds[4]} ${$.joyIds[5]} ${$.joyIds[6]} ${$.joyIds[7]}`)
-    $.log(`${$.joyIds[8]} ${$.joyIds[9]} ${$.joyIds[10]} ${$.joyIds[11]}\n`)
-  }
-  await hourBenefit()
-  await $.wait(1000)
-  await getCoin()
-  await $.wait(1000)
   await getUserBean()
   await $.wait(5000)
   console.log(`当前信息：${$.bean} 京豆，${$.coin} 金币`)
@@ -370,6 +382,7 @@ function getJoyList() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
+            //console.log(data)
             if (data.success && data.data.joyIds) {
               $.joyIds = data.data.joyIds
             } else
@@ -477,6 +490,7 @@ function buyJoy(joyId) {
           if (data.success) {
             if (data.data.eventInfo) {
               await openBox(data.data.eventInfo.eventType, data.data.eventInfo.eventRecordId)
+              await $.wait(1000)
               $.log('金币不足')
               $.canBuy = false
               return
@@ -510,6 +524,7 @@ function sellJoy(joyId, boxId) {
           if (data.success) {
             if (data.data.eventInfo) {
               await openBox(data.data.eventInfo.eventType, data.data.eventInfo.eventRecordId)
+              await $.wait(1000)
               $.canBuy = false
               return
             }
@@ -597,6 +612,7 @@ function getCoin() {
             }
             if (data.data && data.data.luckyBoxRecordId) {
               await openBox('LUCKY_BOX_DROP',data.data.luckyBoxRecordId)
+              await $.wait(1000)
             }
             if (data.data) {
               $.log(`此次在线收益：获得 ${data.data['coins']} 金币`)
