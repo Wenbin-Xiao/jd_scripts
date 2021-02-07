@@ -49,8 +49,8 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
-  `oMZeGJ8Q3ssja5hkb88ysz1myVkiBAsZmXvm21tn0f79FMQ@oMZeXe9Kod0DCrE5M7Z1qcr4t7hsbJF9IrJMcAWup9BZyXgL@oMZeX-dNqIwDUbdiNLhy_et64XAJ-lwyzdJkpU5uu5x9qVco`,
-  `oMZeGJ8Q3ssja5hkb88ysz1myVkiBAsZmXvm21tn0f79FMQ@oMZeXe9Kod0DCrE5M7Z1qcr4t7hsbJF9IrJMcAWup9BZyXgL@oMZeX-dNqIwDUbdiNLhy_et64XAJ-lwyzdJkpU5uu5x9qVco`,
+  `oMZeKYUO_fgiVLBla-crs5_32pyv5bOM_W4Jprpv02EXVM0@oMZeXOZM8YkCBrczP-F2-Ru-IjBHfK31MgkFDXR7zPWSNhoj@oMZeXO9NqYkGUuA0NrJ1qy5TYAjfffsUrr73UVxt1z4SIB6j`,
+  `oMZeXOZM8YkCBrczP-F2-Ru-IjBHfK31MgkFDXR7zPWSNhoj@oMZeXO9NqYkGUuA0NrJ1qy5TYAjfffsUrr73UVxt1z4SIB6j`,
 ];
 !(async () => {
   await requireConfig();
@@ -106,12 +106,12 @@ const inviteCodes = [
     }
   }
 })()
-    .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-    })
-    .finally(() => {
-      $.done();
-    })
+  .catch((e) => {
+    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+  })
+  .finally(() => {
+    $.done();
+  })
 
 async function jdNian() {
   try {
