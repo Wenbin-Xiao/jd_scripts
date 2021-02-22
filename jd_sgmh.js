@@ -29,8 +29,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let appId = '1EFRRxA' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
-  'T019-aknAFRllhyoQlyI46gCjVWmIaW5kRrbA@T027Zm_olqSxIOtH97BATGmKoWraLawCjVWmIaW5kRrbA',
-  'T019-aknAFRllhyoQlyI46gCjVWmIaW5kRrbA@T0225KkcRk1N_FeCJhv3xvdfcQCjVWmIaW5kRrbA'
+  'T022v_13RxwZ91ffPR_wlPcNfACjVWmIaW5kRrbA@T018v_h6QBsa9VfeKByb1ACjVWmIaW5kRrbA@T016aGPImbWDIsNs9Zd1CjVWmIaW5kRrbA@T020anX1lb-5IPJt9JJyQH-MCjVWmIaW5kRrbA@T0225KkcRBoRp1SEJBP1nKIDdgCjVWmIaW5kRrbA@T0225KkcRR1K8wXXJxKiwaIIdACjVWmIaW5kRrbA@T0205KkcH1lQpB6qW3uX06FuCjVWmIaW5kRrbA',
+  'T022v_13RxwZ91ffPR_wlPcNfACjVWmIaW5kRrbA@T018v_h6QBsa9VfeKByb1ACjVWmIaW5kRrbA@T016aGPImbWDIsNs9Zd1CjVWmIaW5kRrbA@T020anX1lb-5IPJt9JJyQH-MCjVWmIaW5kRrbA@T0225KkcRBoRp1SEJBP1nKIDdgCjVWmIaW5kRrbA@T0225KkcRR1K8wXXJxKiwaIIdACjVWmIaW5kRrbA@T0205KkcH1lQpB6qW3uX06FuCjVWmIaW5kRrbA',
 ];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -84,8 +84,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
     }
   }
 })()
-    .catch((e) => $.logErr(e))
-    .finally(() => $.done())
+  .catch((e) => $.logErr(e))
+  .finally(() => $.done())
 //获取活动信息
 function interact_template_getHomeData(timeout = 0) {
   return new Promise((resolve) => {
@@ -319,17 +319,19 @@ function shareCodesFormat() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({
-      url: `http://jd.turinglabs.net/api/v2/jd/sgmh/read/${randomCount}/`,
-      'timeout': 10000
-    }, (err, resp, data) => {
+    $.get({url: "https://gitee.com/Soundantony/RandomShareCode/raw/master/JD_SGMH.json",headers:{
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+      }}, async (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+          console.log(`${$.name} API请求失败，将切换为备用API`)
+          console.log(`随机取助力码放到您固定的互助码后面(不影响已有固定互助)`)
+          $.get({url: `https://raw.githubusercontent.com/shuyeshuye/RandomShareCode/main/JD_SGMH.json`, 'timeout': 10000},(err, resp, data)=>{
+          data = JSON.parse(data);})
         } else {
           if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取助力码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
@@ -339,7 +341,7 @@ function readShareCode() {
         resolve(data);
       }
     })
-    await $.wait(2000);
+    await $.wait(4000);
     resolve()
   })
 }

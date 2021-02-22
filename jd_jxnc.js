@@ -27,7 +27,7 @@ cron "0 9,12,18 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/mast
 =========================Surge============================
 京喜农场 = type=cron,cronexp="0 9,12,18 * * *",timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_jxnc.js
 京喜农场cookie = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-
+ 
 =========================小火箭===========================
 京喜农场 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_jxnc.js, cronexpr="0 9,12,18 * * *", timeout=3600, enable=true
 京喜农场APP种子cookie = type=http-request,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,max-size=131072,timeout=3600,enable=true
@@ -161,29 +161,11 @@ function requireConfig() {
             })
         }
 
-        // 检查互助码是否为 json [smp,active,joinnum] 格式，否则进行通知
-        for (let i = 0; i < jxncShareCodeArr.length; i++) {
-            if (jxncShareCodeArr[i]) {
-                let tmpJxncShareStr = jxncShareCodeArr[i];
-                let tmpjsonShareCodeArr = tmpJxncShareStr.split('@');
-                if (!changeShareCodeJson(tmpjsonShareCodeArr[0])) {
-                    $.log('互助码格式已变更，请重新填写互助码');
-                    $.msg($.name, '互助码格式变更通知', '互助码格式变更，请重新填写 ‼️‼️', option);
-                    if ($.isNode()) {
-                        await notify.sendNotify(`${$.name}`, `互助码格式变更，请重新填写 ‼️‼️`);
-                    }
-                }
-                break;
-            }
-        }
-
-        // console.log(`jdFruitShareArr::${JSON.stringify(jxncShareCodeArr)}`)
-        // console.log(`jdFruitShareArr账号长度::${jxncShareCodeArr.length}`)
         $.log(`您提供了${jxncShareCodeArr.length}个账号的京喜农场助力码`);
 
         try {
             let options = {
-                "url": `https://gitee.com/guyuexuan/jd_share_code/raw/master/share_code/jxnc.json`,
+                "url": `https://gitee.com/Soundantony/RandomShareCode/raw/master/JX_Fruit.json`,
                 "headers": {
                     "Accept": "application/json,text/plain, */*",
                     "Content-Type": "application/x-www-form-urlencoded",
@@ -512,7 +494,7 @@ function submitInviteId(userName) {
 function getAssistUser() {
     return new Promise(resolve => {
         try {
-            $.get({url: `https://api.ninesix.cc/api/jx-nc?active=${$.info.active}`, timeout: 10000}, async (err, resp, _data) => {
+            $.get({url: ``, timeout: 10000}, async (err, resp, _data) => {
                 try {
                     const {code, data: {value, extra = {}} = {}} = JSON.parse(_data);
                     if (value && extra.active) { //  && extra.joinnum 截止 2021-01-22 16:39:09 API 线上还未部署新的 joinnum 参数代码，暂时默认 1 兼容
